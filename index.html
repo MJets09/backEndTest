@@ -10,16 +10,28 @@
 
 <body>
     <div id="container">
-        <h4>Input your console data below : </h4>
+        <h4>Name</h4>
 
-        <input type="text " name="data " id="user">
+        <input type="text " name="data " id="user" onsubmit="getMon()">
         <button type="submit" id="button">Submit</button>
+
+        <h1></h1>
+        <img>
+        <p></p>
+
     </div>
 
-    <h1></h1>
-    <img src=" " alt=" ">
-    <p></p>
+    <div id="container">
+        <h4>Archtype</h4>
 
+        <input type="text " name="data " id="archetype" onsubmit="getArch()">
+        <button type="submit" id="buttonArch">Submit</button>
+
+        <h1 id="archeName"></h1>
+        <img id="archeImage">
+        <p id="arche"></p>
+
+    </div>
 
 
     <script src="./js.js "></script>

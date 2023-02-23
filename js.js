@@ -18,12 +18,24 @@ function getMon() {
 
             console.log(data)
 
-            //Have to figure out how to not get set parameters
+            data.forEach(obj => {
 
-            document.querySelector('h1').innerHTML = data.data[0].name
-            document.querySelector('img').src = data.data[0].card_images[1].image_url
-            console.log(data.data[0].card_images[0].image_url)
-            document.querySelector('p').innerHTML = data.data[0].desc
+                //Create new elements
+                let newLi = document.createElement('li');
+                let newImg = document.createElement('img');
+                //Append elements with our data source that came from the fetch
+                newImg.src = obj.data[0].image_url;
+                //Append images to created li
+                newLi.appendChild(newImg)
+                    //Append new lines with images and attach to ul
+                document.querySelector('ul').appendChild(newLi)
+            })
+
+
+            // document.querySelector('h1').innerHTML = data.data[0].name
+            // document.querySelector('img').src = data.data[0].card_images[1].image_url
+            // console.log(data.data[0].card_images[0].image_url)
+            // document.querySelector('p').innerHTML = data.data[0].desc
         })
         .catch(err => {
             console.log(`error ${err}`)
@@ -44,7 +56,7 @@ function getArch() {
 
             console.log(data)
 
-            //Have to figure out how to not get set parameters
+            //Have to figure out how to use without hardcode
             document.querySelector('#archeName').innerHTML = data.data[0].name
             document.querySelector('#archeImage').src = data.data[0].card_images[0].image_url
             document.querySelector('#arche').innerHTML = data.data[0].desc
